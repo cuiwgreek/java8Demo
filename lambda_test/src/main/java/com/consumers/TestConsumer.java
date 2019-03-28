@@ -1,5 +1,6 @@
 package com.consumers;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -14,6 +15,7 @@ public class TestConsumer {
 			System.out.println(a);
 		};
 		consumer.accept(10);
+		Objects.requireNonNull(null);
 	}
 }
 

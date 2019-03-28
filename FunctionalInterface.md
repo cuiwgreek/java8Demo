@@ -51,3 +51,4 @@
  
  3、如果一个接口有一个抽象方法和一些重写了java.lang.Object类公共方法的方法，那么表示它是一个函数式接口。
  
+ https://www.cnblogs.com/LeeScofiled/p/6921337.html
