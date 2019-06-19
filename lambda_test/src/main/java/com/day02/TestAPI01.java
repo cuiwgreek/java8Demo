@@ -42,7 +42,6 @@ public class TestAPI01 {
     public void test1(){
         boolean bl = emps.stream()
                 .allMatch((e) -> e.getStatus().equals(Status.BUSY));
-
         System.out.println(bl);
 
         boolean bl1 = emps.stream()
