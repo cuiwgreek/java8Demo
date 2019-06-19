@@ -4,9 +4,8 @@ import com.day01.Employee;
 import com.day01.Employee.Status;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Classname TestAPI02
@@ -24,7 +23,23 @@ public class TestAPI02 {
             new Employee(104, "赵六", 8, 7777.77, Status.FREE),
             new Employee(105, "田七", 38, 5555.55, Status.BUSY)
     );
+    @Test
+    public void test0(){
+        List<String> list = emps.stream().map(Employee::getName)
+                .collect(Collectors.toList());
+        list.forEach(System.out::println);
 
+        Set<String> set = emps.stream().map(Employee::getName)
+                .collect(Collectors.toSet());
+        set.forEach(System.out::print);
+
+        HashSet<String> hs = emps.stream().map(Employee::getName)
+                .collect(Collectors.toCollection(HashSet::new));
+
+        hs.forEach(System.out::println);
+
+
+    }
     //3. 终止操作
 	/*
 		归约
@@ -46,8 +61,9 @@ public class TestAPI02 {
                 .reduce(Double::sum);
 
         System.out.println(op.get());
-
     }
+
+
 
 
 }
