@@ -38,7 +38,6 @@ public class TestAPI02 {
 
         hs.forEach(System.out::println);
 
-
     }
     //3. 终止操作
 	/*
@@ -62,8 +61,28 @@ public class TestAPI02 {
 
         System.out.println(op.get());
     }
+    /**
+        规约
+     reduce(T identity, BinaryOperator)/ reduce(BinaryOperator)
+     */
+    @Test
+    public void test3(){
 
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum = list.stream()
+                .reduce(0, (x, y) -> x + y);
+        System.out.println(sum);
 
+        Optional<Double> op = emps.stream()
+                .map(Employee::getSalary)
+                .reduce(Double::sum);
+        //可能为0
 
+    }
+
+    @Test
+    public void test4(){
+
+    }
 
 }
