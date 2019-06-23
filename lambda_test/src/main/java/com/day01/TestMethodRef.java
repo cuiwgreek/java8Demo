@@ -101,9 +101,9 @@ public class TestMethodRef {
     //构造器引用
     @Test
     public void test7(){
-        Function<String, Employee> fun = Employee::new;
-
-        BiFunction<String, Integer, Employee> fun2 = Employee::new;
+//        Function<String, Employee> fun = Employee::new;
+//
+//        BiFunction<String, Integer, Employee> fun2 = Employee::new;
     }
 
     //数组引用

@@ -11,7 +11,7 @@ public class Employee {
 	public Employee() {
 	}
 
-	public Employee(String name) {
+	public Employee(String name, int i, double v) {
 		this.name = name;
 	}
 
