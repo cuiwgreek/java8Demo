@@ -4,9 +4,8 @@ import com.day01.Employee;
 import com.day01.Employee.Status;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -52,7 +51,19 @@ public class TestAPI01 {
         boolean bl2 = emps.stream()
                 .noneMatch((e) -> e.getStatus().equals(Status.BUSY));
 
-        System.out.println(bl2);
+        Optional<Employee> op = emps.stream()
+                .sorted((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary()))
+                .findFirst();
+
+        System.out.println(op.get());
+
+        Optional<Employee> op2 = emps.parallelStream()
+                .filter(e -> e.getStatus().equals(Status.FREE))
+                .findAny();
+        // 并行流
+        System.out.println(op2);
+
+
     }
 
     @Test
