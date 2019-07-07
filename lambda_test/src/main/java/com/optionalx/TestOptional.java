@@ -83,5 +83,10 @@ public class TestOptional {
         return "cang";
     }
 
-
+    public String getGodnessName2(Optional<NewMan> man){
+        return man.orElse(new NewMan())
+                .getGodness()
+                .orElse(new Godness("cang"))
+                .getName();
+    }
 }
