@@ -27,6 +27,8 @@ public class LambdaExpression {
 
         Comparator<Apple> byColor2 = (o1, o2) -> o1.getColor().compareTo(o2.getColor());
 
+        Comparator<Apple> byColor3 = (o1, o2) -> {return o1.getColor().compareTo(o2.getColor());};
+
         Function<String, Integer> flambda = s -> s.length();
 
         Predicate<Apple> p = (Apple a) -> a.getColor().equals("green");
