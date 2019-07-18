@@ -59,6 +59,10 @@ public class LambdaUsage {
 		return fun.apply(apple);
 	}
 
+	private static Apple testBiFunction(String color,long weight,BiFunction<String,Long,Apple> fun){
+		return fun.apply(color, weight);
+	}
+
 	public static void main(String[] args) {
 //		Runnable r1 = () -> System.out.print("hello");
 //
@@ -86,11 +90,29 @@ public class LambdaUsage {
 
 		simpleTestBiConsumer("xxx",list,(a,s) -> System.out.print(s + a.getColor() + ":Weight=> " + a.getWeight() ));
 
+		IntFunction<Double> f = i -> i * 100.0;
+		Double result4 = f.apply(10);
+		System.out.print(" ====================================== ");
+		System.out.print(result4);
 
+		Apple a = testBiFunction("Blue",130,(s,w)->new Apple(s,w));
 
+		Supplier<String> s = String::new;
+		System.out.print(s.get().getClass());
+
+		Apple a2 = createApple(()->new Apple("Green",100));
+		System.out.print(a2);
+
+		int i = 0;
+		Runnable r2 = ()->System.out.print(i);
 	}
 
 	private static void process(Runnable r){
 		r.run();
 	}
+
+	private static Apple createApple(Supplier<Apple> supplier){
+		return supplier.get();
+	}
+
 }
