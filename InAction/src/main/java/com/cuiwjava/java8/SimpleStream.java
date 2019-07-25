@@ -2,6 +2,9 @@ package com.cuiwjava.java8;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @Classname SimpleStream
@@ -27,8 +30,19 @@ public class SimpleStream {
 
 //       	List<String> dishNamesByCollections = getDishNameByColletions(menu);
 //        System.out.println(dishNamesByCollections);
-        List<String> dishNamesByStreams = getDishNameByStream(menu);
-        System.out.println(dishNamesByStreams);
+//        List<String> dishNamesByStreams = getDishNameByStream(menu);
+//        System.out.println(dishNamesByStreams);
+			Stream<Dish> stream = menu.stream();
+			stream.forEach(System.out::println);
+			menu.forEach(System.out::println);
+
+		List<String> result = menu.stream().filter(d -> {
+			System.out.println(" filtering-> " + d.getName());
+			return d.getCalories() > 300;
+		}).map(d -> {
+			System.out.println("map-> " + d.getName());
+			return d.getName();
+		}).limit(3).collect(toList());
 
 
 	}
@@ -67,7 +81,7 @@ public class SimpleStream {
 			}
 			return d.getCalories() < 400;
 		}).sorted(Comparator.comparing(Dish::getCalories)).
-				map(Dish::getName).collect(Collectors.toList());
+				map(Dish::getName).collect(toList());
 
 //		return menu.parallelStream().filter(d -> {
 //
