@@ -32,9 +32,14 @@ public class SimpleStream {
 //        System.out.println(dishNamesByCollections);
 //        List<String> dishNamesByStreams = getDishNameByStream(menu);
 //        System.out.println(dishNamesByStreams);
-			Stream<Dish> stream = menu.stream();
-			stream.forEach(System.out::println);
-			menu.forEach(System.out::println);
+//			Stream<Dish> stream = menu.stream();
+//			stream.forEach(System.out::println);
+//			menu.forEach(System.out::println);
+
+		Stream<Dish> dishStream = Stream.of(new Dish("prawns", false, 300, Dish.Type.FISH),
+				new Dish("salmon", false, 450, Dish.Type.FISH));
+		dishStream.forEach(System.out::println);
+
 
 		List<String> result = menu.stream().filter(d -> {
 			System.out.println(" filtering-> " + d.getName());
