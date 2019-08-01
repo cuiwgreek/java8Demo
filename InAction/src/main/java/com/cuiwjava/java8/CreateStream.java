@@ -36,7 +36,7 @@ public class CreateStream {
 		return Stream.of("hello", "alex", "cuiwjava", "world");
 	}
 
-	private static Stream<String> createStreamFromArrays(){
+	private static Stream<String> createStreamFromArrays (){
 		String[] strings = {"hello", "alex", "wangwenjun", "world", "stream"};
 		return Arrays.stream(strings);
 	}
