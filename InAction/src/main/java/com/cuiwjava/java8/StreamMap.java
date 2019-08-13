@@ -1,7 +1,9 @@
 package com.cuiwjava.java8;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -32,8 +34,20 @@ public class StreamMap {
         //H,e,l,l,o,W,o,r,l,d
         Stream<String> stringStream = stream.flatMap(Arrays::stream);
 
-        stringStream.distinct().forEach(System.out::println);
+//        stringStream.distinct().forEach(System.out::println);
 
+
+        Set<String> retSetCache = new HashSet<>();
+        retSetCache.add("777");
+        retSetCache.add("555");
+        retSetCache.add("666");
+
+        String value = "888,333,222";
+        boolean dd = Arrays.stream(value.split(",")).anyMatch(
+                decisionId -> {
+                    return retSetCache.contains(decisionId);
+                });
+        System.out.println(" ddddddd   "+dd);
     }
 
 
