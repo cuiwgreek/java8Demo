@@ -37,17 +37,18 @@ public class StreamMap {
 //        stringStream.distinct().forEach(System.out::println);
 
 
-        Set<String> retSetCache = new HashSet<>();
-        retSetCache.add("777");
-        retSetCache.add("555");
-        retSetCache.add("666");
+//        Set<String> retSetCache = new HashSet<>();
+//        retSetCache.add("777");
+//        retSetCache.add("555");
+//        retSetCache.add("666");
+//
+//        String value = "888,333,222";
+//        boolean dd = Arrays.stream(value.split(",")).anyMatch(
+//                decisionId -> {
+//                    return retSetCache.contains(decisionId);
+//                });
+//        System.out.println(" ddddddd   "+dd);
 
-        String value = "888,333,222";
-        boolean dd = Arrays.stream(value.split(",")).anyMatch(
-                decisionId -> {
-                    return retSetCache.contains(decisionId);
-                });
-        System.out.println(" ddddddd   "+dd);
     }
 
 
