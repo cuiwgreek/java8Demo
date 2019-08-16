@@ -1,3 +1,4 @@
+
 public class LongDivision {
     
     private static final long MILLIS_PER_DAY
@@ -7,7 +8,6 @@ public class LongDivision {
             = 24 * 60 * 60 * 1000 * 1000;
 
     public static void main(String[] args) {
-
         System.out.println(MICROS_PER_DAY / MILLIS_PER_DAY);
     }
 }
