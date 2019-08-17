@@ -4,7 +4,6 @@ package com.cuiwjava.java8;
  * Created by wangwenjun on 2016/10/12.
  */
 public class Apple {
-
     private String color;
     private long weight;
 

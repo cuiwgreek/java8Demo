@@ -9,6 +9,5 @@ import com.huaban.analysis.jieba.JiebaSegmenter;
 public class Test {
 	public static void main(String[] args) {
 		JiebaSegmenter segmenter = new JiebaSegmenter();
-
 	}
 }
