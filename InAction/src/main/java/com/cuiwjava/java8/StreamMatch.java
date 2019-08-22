@@ -12,7 +12,6 @@ public class StreamMatch {
         boolean matched = stream.allMatch(i -> i > 10);
         System.out.println(matched);
 
-
         stream = Arrays.stream(new Integer[]{1, 2, 3, 4, 5, 6, 7});
         matched = stream.anyMatch(i -> i > 6);
 
