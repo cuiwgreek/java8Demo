@@ -1,13 +1,13 @@
 class Join {
-	CalcThread calc = new CalcThread();
-	calc.start();
+	public static void main(String[] args) throws InterruptedException {
+		CalcThread calc = new CalcThread();
+		calc.start();
 
-	doSomethingElse();
- try
+//		doSomethingElse();
 
-	{
 		calc.join();
 		System.out.println("result is" + calc.result());
 		System.out.println("No answer: interrupted");
 	}
+
 }
