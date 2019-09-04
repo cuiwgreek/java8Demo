@@ -1,6 +1,9 @@
 //[Listing One]
 //PingPong
 
+/**
+ * https://stackoverflow.com/questions/12785238/java-thread-ping-pong-example
+ */
 class PingPong extends Thread {
 	String word;//what word to print
 	int delay;//how long to pause
