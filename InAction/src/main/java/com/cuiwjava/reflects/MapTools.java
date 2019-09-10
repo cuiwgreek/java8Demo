@@ -1,6 +1,8 @@
 package com.cuiwjava.reflects;
 
+
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +17,28 @@ public class MapTools {
         car.setYear(2018);
 
         System.out.println(objectToMap(car));
+
+        //檢查字串否為空白檢
+        System.out.println("是否為空白:"+ StringUtils.isEmpty(""));
+        System.out.println("A是否為空白:"+StringUtils.isEmpty("A"));
+        System.out.println(" 是否為空白:"+StringUtils.isEmpty(" "));
+        System.out.println("-------------------------------");
+        //字串nvl
+        System.out.println("空白　:"+StringUtils.nvl("", "啦啦啦"));
+        System.out.println("非空白:"+StringUtils.nvl("AAA", "啦啦啦"));
+        System.out.println("-------------------------------");
+
+        //字串是否為數字
+        System.out.println("123數字:"+StringUtils.intNvl("123", 0));
+        System.out.println("A123數字:"+StringUtils.intNvl("A123", 0));
+        System.out.println("-------------------------------");
+
+        //字串是否為數字BigDecimal
+        System.out.println("BigDecimal:");
+        System.out.println("123數字:"+StringUtils.BigDecimalNvl("123", BigDecimal.ZERO));
+        System.out.println("A123數字:"+StringUtils.BigDecimalNvl("A123", BigDecimal.ZERO));
+        System.out.println("-------------------------------");
+
     }
 
     /**
@@ -30,7 +54,9 @@ public class MapTools {
         for (Field field : clazz.getDeclaredFields()) {
             field.setAccessible(true);
             String fieldName = field.getName();
-            Object value = StringUtils.nvl(field.get(obj));
+            field.get(null);
+            Object value = field.get(obj);
+                    StringUtils.nvl(value.toString(),null);
             map.put(fieldName, value);
         }
         return map;
