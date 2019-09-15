@@ -18,6 +18,5 @@ public class Test {
 		String nowText = now.format(df);
 		System.out.println("nowText=" + nowText);
 
-//		System.out.println(localDate);
 	}
 }
