@@ -12,11 +12,9 @@ import java.time.format.DateTimeFormatter;
  */
 public class Test {
 	public static void main(String[] args) {
-
 		DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyyMMdd");
 		LocalDateTime now = LocalDateTime.now();
 		String nowText = now.format(df);
 		System.out.println("nowText=" + nowText);
-
 	}
 }
