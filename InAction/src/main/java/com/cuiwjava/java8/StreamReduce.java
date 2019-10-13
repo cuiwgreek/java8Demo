@@ -5,9 +5,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * Created by wangwenjun on 2016/10/22.
- */
+
 public class StreamReduce {
 
     public static void main(String[] args) {

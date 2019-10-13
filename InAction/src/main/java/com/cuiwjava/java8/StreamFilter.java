@@ -5,9 +5,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-/**
- * Created by wangwenjun on 2016/10/20.
- */
+
 public class StreamFilter {
 
     public static void main(String[] args) {
