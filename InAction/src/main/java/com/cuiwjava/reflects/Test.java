@@ -1,6 +1,8 @@
 package com.cuiwjava.reflects;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Classname Test
@@ -10,10 +12,14 @@ import java.math.BigDecimal;
  */
 public class Test {
 	public static void main(String[] args) {
-		BigDecimal changeLimit = new BigDecimal("1800");
-
-		System.out.println(changeLimit.compareTo(new BigDecimal("0")) <= 0);
-
+//		BigDecimal changeLimit = new BigDecimal("1800");
+//
+//		System.out.println(changeLimit.compareTo(new BigDecimal("0")) <= 0);
+//		Map<String, String> map = new HashMap<String, String>();
+//		map.put("passwdType", null);
+//		System.out.println("   map   ="+map);
+		String sourceType = "BT-NOPWD";
+		System.out.println(!"JDZF-SC".equals(sourceType) && !"BT-PC".equals(sourceType) && !"BT-NOPWD".equals(sourceType));
 
 	}
 }
